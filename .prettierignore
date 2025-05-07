@@ -1,0 +1,17 @@
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+.venv/
+node_modules/
+
+packages/backend/embedding_atlas/widget_static/
+packages/docs/.vitepress/cache/
+packages/docs/public/
+packages/docs/demo_data/
+packages/umap-wasm/runtime.js
+packages/umap-wasm/notebooks/data/
+packages/umap-wasm/third_party/
+packages/component/src/lib/density_clustering/wasm/
+packages/density-clustering/comparisons/supercluster-result.json
+packages/backend/embedding_atlas/static/

@@ -1,0 +1,43 @@
+{
+  "name": "@embedding-atlas/table",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "package": "npm run build && publint",
+    "preview": "vite preview"
+  },
+  "files": [
+    "dist",
+    "svelte"
+  ],
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./svelte": {
+      "types": "./svelte/index.d.ts",
+      "svelte": "./svelte/index.js",
+      "default": "./svelte/index.js"
+    }
+  },
+  "peerDependencies": {
+    "@uwdata/mosaic-core": ">=0.15.0",
+    "@uwdata/mosaic-sql": ">=0.15.0",
+    "svelte": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.15",
+    "publint": "^0.3.0",
+    "svelte": "^5.1.9",
+    "svelte-check": "^4.0.0",
+    "typescript": "^5.2.2",
+    "vite": "^6.1.0",
+    "lodash": "^4.17.21"
+  }
+}
