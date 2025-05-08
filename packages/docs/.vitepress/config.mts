@@ -4,7 +4,10 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "Embedding Atlas",
   description: "Documentation for embedding atlas.",
-  head: [["link", { rel: "icon", href: "/embedding-atlas/favicon.svg" }]],
+  head: [
+    ["link", { rel: "icon", href: "/embedding-atlas/favicon.svg", media: "(prefers-color-scheme: light)" }],
+    ["link", { rel: "icon", href: "/embedding-atlas/favicon_dark.svg", media: "(prefers-color-scheme: dark)" }],
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: {
