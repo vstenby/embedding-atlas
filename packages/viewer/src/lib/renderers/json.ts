@@ -26,6 +26,8 @@ export class JSONRenderer {
   }
 
   update(props: { value: any }) {
-    this.element.innerHTML = `<pre>${safeJSONStringify(props.value)}</pre>`;
+    let pre = document.createElement("pre");
+    pre.innerText = safeJSONStringify(props.value);
+    this.element.replaceChildren(pre);
   }
 }

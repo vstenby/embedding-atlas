@@ -10,9 +10,14 @@ export class URLRenderer {
 
   update(props: { value: any }) {
     if (props.value != null) {
-      this.element.innerHTML = `<a href="${props.value}" class="underline" target="_blank">${props.value}</a>`;
+      let a = document.createElement("a");
+      a.href = props.value;
+      a.innerText = props.value;
+      a.className = "underline";
+      a.target = "_blank";
+      this.element.replaceChildren(a);
     } else {
-      this.element.innerHTML = `(null)`;
+      this.element.innerText = `(null)`;
     }
   }
 }

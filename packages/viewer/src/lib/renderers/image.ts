@@ -12,14 +12,17 @@ export class ImageRenderer {
 
   update(props: { value: any }) {
     if (props.value == null) {
-      this.element.innerHTML = "(null)";
+      this.element.innerText = "(null)";
       return;
     }
     let dataUrl = imageToDataUrl(props.value);
     if (dataUrl != null) {
-      this.element.innerHTML = `<img src="${dataUrl}" style="max-height: 100px" />`;
+      let img = document.createElement("img");
+      img.src = dataUrl;
+      img.style.maxHeight = "100px";
+      this.element.replaceChildren(img);
     } else {
-      this.element.innerHTML = `(unknown)`;
+      this.element.innerText = `(unknown)`;
     }
   }
 }
