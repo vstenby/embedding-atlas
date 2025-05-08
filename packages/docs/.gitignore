@@ -2,3 +2,4 @@
 .vitepress/dist
 public/upload
 public/demo
+demo-data

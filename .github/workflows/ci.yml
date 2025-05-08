@@ -31,5 +31,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - uses: actions/cache@v4
+        id: cache-demo-data
+        with:
+          path: packages/docs/demo-data
+          key: ${{ runner.os }}-${{ hashFiles('packages/docs/generate_demo_data.py') }}
+
+      - name: Generate demo data
+        if: steps.cache-demo-data.outputs.cache-hit != 'true'
+        run: cd packages/docs && uv run generate_demo_data.py
+
       - name: Run custom build script
         run: ./scripts/build.sh
