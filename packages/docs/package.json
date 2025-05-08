@@ -1,9 +1,8 @@
 {
   "scripts": {
     "dev": "vitepress dev",
-    "build": "npm run generate_assets && vitepress build",
+    "build": "npm run generate_assets && vitepress build --base /embedding-atlas/",
     "preview": "npm run generate_assets && vitepress preview",
-    "deploy": "npm run generate_assets && vitepress build --base /embedding-atlas/ && gh-pages --nojekyll -d .vitepress/dist",
     "generate_assets": "./generate_assets.sh"
   },
   "devDependencies": {
