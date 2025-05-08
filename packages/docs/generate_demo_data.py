@@ -8,6 +8,7 @@ import os
 import shutil
 
 import click
+import numpy as np
 import pandas as pd
 from datasets import load_dataset
 from sentence_transformers import SentenceTransformer
@@ -19,7 +20,9 @@ def add_embedding_projection(df: pd.DataFrame, text: str):
     texts = list(df[text])
 
     transformer = SentenceTransformer("all-MiniLM-L6-v2")
-    hidden_vectors = transformer.encode(texts)
+    hidden_vectors = transformer.encode(texts, show_progress_bar=True)
+
+    random_state = np.random.RandomState(42)
 
     knn = nearest_neighbors(
         hidden_vectors,
@@ -27,10 +30,12 @@ def add_embedding_projection(df: pd.DataFrame, text: str):
         metric="cosine",
         metric_kwds=None,
         angular=False,
-        random_state=None,
+        random_state=random_state,
     )
 
-    proj = UMAP(metric="cosine", precomputed_knn=knn).fit_transform(hidden_vectors)
+    proj = UMAP(
+        metric="cosine", precomputed_knn=knn, random_state=random_state
+    ).fit_transform(hidden_vectors)
 
     df["projection_x"] = proj[:, 0]  # type: ignore
     df["projection_y"] = proj[:, 1]  # type: ignore
@@ -55,7 +60,7 @@ def main(output: str):
     ]
 
     ds = load_dataset(name, split="train")
-    df = ds.to_pandas().sample(100)[columns]  # type: ignore
+    df = ds.to_pandas()[columns]  # type: ignore
 
     add_embedding_projection(df, text="description")
 
