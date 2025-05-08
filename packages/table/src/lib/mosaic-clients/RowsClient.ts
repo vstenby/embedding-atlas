@@ -43,6 +43,9 @@ export class RowsClient extends MosaicClient {
   }
 
   async prepare() {
+    if (this.coordinator == null) {
+      return;
+    }
     let info = await queryFieldInfo(this.coordinator, [{ table: this.tableName, column: "*" }]);
     const columnInfo = info.reduce((dict: ColumnInfo, f) => {
       dict[f.column] = f;

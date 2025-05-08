@@ -46,7 +46,7 @@
     "d3-format": "^3.1.0",
     "d3-scale": "^4.0.2",
     "d3-scale-chromatic": "^3.1.0",
-    "flexsearch": "^0.7.43",
+    "flexsearch": "^0.8.161",
     "mark.js": "^8.11.1",
     "marked": "^15.0.2",
     "nanoid": "^5.0.9",

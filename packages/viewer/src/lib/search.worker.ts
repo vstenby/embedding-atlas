@@ -1,8 +1,8 @@
 // Copyright (c) 2025 Apple Inc. Licensed under MIT License.
 
-import FlexSearchIndex from "flexsearch/dist/module/index";
+import { Index } from "flexsearch";
 
-let index = new FlexSearchIndex();
+let index = new Index();
 
 export interface ClearRequest {
   type: "clear";
@@ -25,7 +25,7 @@ export interface QueryRequest {
 self.onmessage = (e: MessageEvent<ClearRequest | PointsRequest | QueryRequest>) => {
   switch (e.data.type) {
     case "clear":
-      index = new FlexSearchIndex();
+      index = new Index();
       postMessage({ identifier: e.data.identifier });
       break;
     case "points":

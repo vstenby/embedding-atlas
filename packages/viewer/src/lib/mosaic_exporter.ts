@@ -31,7 +31,7 @@ export async function exportMosaicSelection(
   predicate: string | null,
   format: ExportFormat,
 ): Promise<[Uint8Array, string]> {
-  let db = await coordinator.databaseConnector().getDuckDB();
+  let db = await (coordinator.databaseConnector() as any)?.getDuckDB();
   let name = filenameForSelection(format);
   await db.registerEmptyFileBuffer(name);
   let query = makeQuery(table, predicate, name, format);
