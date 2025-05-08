@@ -1,3 +1,5 @@
+# Copyright (c) 2025 Apple Inc. Licensed under MIT License.
+
 """The embedding atlas widget for notebooks"""
 
 import pathlib
