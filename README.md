@@ -1,10 +1,4 @@
-<h1>
-<picture style="margin-right:0.1em">
-  <source media="(prefers-color-scheme: dark)" srcset="./packages/docs/public/favicon.svg">
-  <img style="height:1em;vertical-align:-0.125em;" alt="screenshot of Embedding Atlas" src="./packages/docs/public/favicon_dark.svg">
-</picture>
-Embedding Atlas
-</h1>
+# Embedding Atlas
 
 Embedding Atlas is a tool that provides interactive visualizations for large embeddings. It allows you to visualize, cross-filter, and search embeddings and metadata.
 
