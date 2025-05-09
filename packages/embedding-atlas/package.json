@@ -4,6 +4,10 @@
   "type": "module",
   "license": "MIT",
   "description": "Components for interactive embedding visualization",
+  "keywords": [
+    "embedding",
+    "visualization"
+  ],
   "homepage": "https://apple.github.io/embedding-atlas",
   "repository": {
     "type": "git",
