@@ -54,8 +54,6 @@ function makeDatabaseConnector(model: AnyModel<Model>) {
 const initialize: Initialize<Model> = (view) => {};
 
 const render: Render<Model> = (view) => {
-  view.el.classList.add("mosaic-widget");
-
   const coordinator = new Coordinator();
   coordinator.databaseConnector(makeDatabaseConnector(view.model));
 
@@ -83,12 +81,14 @@ const render: Render<Model> = (view) => {
   }
 
   // Configure view style
-  view.el.style.height = "650px";
-  view.el.style.resize = "vertical";
-  view.el.style.overflow = "auto";
+  let container = document.createElement("div");
+  container.style.height = "650px";
+  container.style.resize = "vertical";
+  container.style.overflow = "auto";
+  view.el.replaceChildren(container);
 
   // Create the component
-  const component = new EmbeddingAtlas(view.el, getProps());
+  const component = new EmbeddingAtlas(container, getProps());
 
   return () => {
     component.destroy();
