@@ -47,6 +47,12 @@ jobs:
       - name: Run custom build script
         run: ./scripts/build.sh
 
+      - name: Upload node package artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: node-dist
+          path: packages/embedding-atlas/
+
       - name: Upload python package artifact
         uses: actions/upload-artifact@v4
         with:
@@ -81,6 +87,31 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: dist/
+
+  publish-npmjs:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release'
+    needs:
+      - build
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Retrieve release distributions
+        uses: actions/download-artifact@v4
+        with:
+          name: node-dist
+          path: package/
+
+      - run: cd package && npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   publish-pages:
     runs-on: ubuntu-latest
