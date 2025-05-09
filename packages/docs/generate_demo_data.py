@@ -61,6 +61,7 @@ def main(output: str):
 
     ds = load_dataset(name, split="train")
     df = ds.to_pandas()[columns]  # type: ignore
+    df["_row_index"] = range(len(df))
 
     add_embedding_projection(df, text="description")
 
