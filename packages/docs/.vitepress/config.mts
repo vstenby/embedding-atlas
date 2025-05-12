@@ -49,7 +49,7 @@ export default defineConfig({
     ],
     socialLinks: [{ icon: "github", link: "https://github.com/apple/embedding-atlas" }],
     footer: {
-      copyright: "Copyright © 2025 Apple Inc. All rights reserved.",
+      copyright: "Copyright © 2025 Apple Inc. Released under the MIT license.",
     },
   },
 });
