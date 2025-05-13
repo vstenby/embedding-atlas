@@ -3,10 +3,13 @@ import { defineConfig } from "vitepress";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Embedding Atlas",
-  description: "Documentation for embedding atlas.",
+  description:
+    "Interactive visualizations for large-scale embeddings. Effortlessly explore, filter, and search through rich metadata.",
   head: [
     ["link", { rel: "icon", href: "/embedding-atlas/favicon.svg", media: "(prefers-color-scheme: light)" }],
     ["link", { rel: "icon", href: "/embedding-atlas/favicon_dark.svg", media: "(prefers-color-scheme: dark)" }],
+    ["meta", { property: "twitter:image", content: "/embedding-atlas/social.png" }],
+    ["meta", { property: "og:image", content: "/embedding-atlas/social.png" }],
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
