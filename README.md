@@ -46,6 +46,20 @@ import { EmbeddingAtlas, EmbeddingView, Table } from "embedding-atlas/svelte";
 
 ## BibTeX
 
+For the Embedding Atlas tool:
+
+```bibtex
+@misc{ren2025embedding,
+  title={Embedding Atlas: Low-Friction, Interactive Embedding Visualization},
+  author={Donghao Ren and Fred Hohman and Halden Lin and Dominik Moritz},
+  year={2025},
+  eprint={2505.06386},
+  archivePrefix={arXiv},
+  primaryClass={cs.HC},
+  url={https://arxiv.org/abs/2505.06386},
+}
+```
+
 For the algorithm that automatically produces clusters and labels in the embedding view:
 
 ```bibtex
