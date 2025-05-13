@@ -23,6 +23,7 @@ To avoid package installation issues, we recommend using the [uv package manager
 ```bash
 uvx embedding-atlas
 ```
+
 :::
 
 ## Loading Data

@@ -20,10 +20,10 @@ export async function initializeDatabase(
     const conn = await wasmConnector({ duckdb: db.duckdb, connection: db.connection });
     coordinator.databaseConnector(conn);
   } else if (type == "socket") {
-    const conn = await socketConnector({uri: uri ?? ""});
+    const conn = await socketConnector({ uri: uri ?? "" });
     coordinator.databaseConnector(conn);
   } else if (type == "rest") {
-    const conn = await restConnector({uri: uri ?? ""});
+    const conn = await restConnector({ uri: uri ?? "" });
     coordinator.databaseConnector(conn);
   }
 }
