@@ -12,7 +12,7 @@ on:
       - published
   workflow_dispatch:
     inputs:
-      publish_docs:
+      publish_pages:
         description: "Publish Documentation Website"
         required: false
         type: boolean
@@ -124,7 +124,7 @@ jobs:
 
   publish-pages:
     runs-on: ubuntu-latest
-    if: github.event_name == 'release' || github.event.inputs.publish_docs == true
+    if: github.event_name == 'release' || inputs.publish_pages == true
     needs:
       - build
     permissions:
