@@ -1,5 +1,7 @@
 # Overview
 
+Embedding Atlas is a tool that provides interactive visualizations for large embeddings. It allows you to visualize, cross-filter, and search embeddings and metadata.
+
 Embedding Atlas is released as two packages:
 
 - A Python package `embedding-atlas` that provides:
