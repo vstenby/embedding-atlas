@@ -51,7 +51,7 @@
     "marked": "^15.0.2",
     "nanoid": "^5.0.9",
     "postcss": "^8.4.38",
-    "prism-code-editor": "^3.4.0",
+    "prism-code-editor": "^4.0.0",
     "publint": "^0.3.0",
     "svelte": "^5.1.9",
     "svelte-spa-router": "^4.0.1",
