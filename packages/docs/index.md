@@ -48,7 +48,3 @@ features:
     title: Multi-coordinated views for metadata exploration
     details: Interactively link and filter data across metadata columns.
 ---
-
-<h2>Demo</h2>
-
-<iframe style="width:100%; height: 700px; border: none; border-radius: 4px" src="./demo/index.html"></iframe>
