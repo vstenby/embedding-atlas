@@ -39,7 +39,7 @@ pip install embedding-atlas
 embedding-atlas <your-dataset.parquet>
 ```
 
-In addition to the command line too, Embedding Atlas is also available as a Jupyter widget:
+In addition to the command line tool, Embedding Atlas is also available as a Jupyter widget:
 
 ```python
 from embedding_atlas.widget import EmbeddingAtlasWidget
