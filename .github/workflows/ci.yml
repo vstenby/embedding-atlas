@@ -34,6 +34,11 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Setup emsdk
+        uses: mymindstorm/setup-emsdk@v14
+        with:
+          version: 4.0.13
+
       - name: Set up uv package manager
         uses: astral-sh/setup-uv@v5
 
@@ -50,7 +55,10 @@ jobs:
         if: steps.cache-demo-data.outputs.cache-hit != 'true'
         run: cd packages/docs && uv run generate_demo_data.py
 
-      - name: Run custom build script
+      - name: Build WASM modules
+        run: ./scripts/build_wasm.sh
+
+      - name: Build JavaScript and Python packages
         run: ./scripts/build.sh
 
       - name: Upload node package artifact
