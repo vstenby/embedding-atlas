@@ -32,6 +32,8 @@
 
     automaticLabels?: any;
 
+    pointSize?: number | null;
+
     customTooltip?: any;
     customOverlay?: any;
 
@@ -54,6 +56,7 @@
     categoryLegend,
     additionalFields,
     minimumDensityExpFactor,
+    pointSize = null,
     customTooltip,
     customOverlay,
     automaticLabels,
@@ -184,6 +187,7 @@
     width={embeddingWidth}
     height={embeddingHeight}
     mode={mode}
+    pointSize={pointSize}
     customTooltip={customTooltip}
     customOverlay={customOverlay}
   />

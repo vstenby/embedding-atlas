@@ -71,6 +71,7 @@
       neighborsColumn={columns.neighbors}
       cache={dataSource.cache}
       automaticLabels={true}
+      pointSize={columns.pointSize}
       onExportApplication={dataSource.downloadArchive ? onDownloadArchive : null}
       onExportSelection={dataSource.downloadSelection ? onExportSelection : null}
       onStateChange={debounce(onStateChange, 200)}

@@ -29,6 +29,7 @@ interface Metadata {
     uri?: string;
     load?: boolean;
   };
+  pointSize?: number;
 }
 
 export class BackendDataSource implements DataSource {
@@ -90,7 +91,10 @@ export class BackendDataSource implements DataSource {
       };
     }
 
-    return metadata.columns;
+    return {
+      ...metadata.columns,
+      pointSize: metadata.pointSize,
+    };
   }
 
   private async fetchEndpoint(endpoint: string, init?: RequestInit) {

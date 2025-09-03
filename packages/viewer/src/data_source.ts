@@ -27,6 +27,9 @@ export interface DataColumns {
 
   /** The column for pre-computed nearest neighbors */
   neighbors?: string;
+
+  /** The point size for the embedding view */
+  pointSize?: number;
 }
 
 /** A data source for the viewer */

@@ -8,12 +8,12 @@ import Component from "./EmbeddingViewMosaic.svelte";
 import type { Point, Rectangle, ViewportState } from "../utils.js";
 import type { Theme } from "./theme.js";
 import type {
-  AutomaticLabelsConfig,
-  CustomComponent,
-  DataField,
-  DataPoint,
-  DataPointID,
-  OverlayProxy,
+    AutomaticLabelsConfig,
+    CustomComponent,
+    DataField,
+    DataPoint,
+    DataPointID,
+    OverlayProxy,
 } from "./types.js";
 
 export interface EmbeddingViewMosaicProps {
@@ -98,6 +98,9 @@ export interface EmbeddingViewMosaicProps {
   /** Minimum average density for density contours to show up.
    * The density is measured as number of points per square points (aka., px in CSS units). */
   minimumDensity?: number | null;
+
+  /** Override the automatically calculated point size. If not specified, point size is calculated based on density. */
+  pointSize?: number | null;
 
   /** A custom renderer to draw the tooltip content. */
   customTooltip?: CustomComponent<HTMLDivElement, { tooltip: DataPoint }> | null;
