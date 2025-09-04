@@ -322,7 +322,7 @@ def main(
     }
 
     if point_size is not None:
-        metadata["pointSize"] = point_size
+        metadata["point_size"] = point_size
 
     if x_column is not None and y_column is not None:
         metadata["columns"]["embedding"] = {
