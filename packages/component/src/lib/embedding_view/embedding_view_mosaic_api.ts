@@ -8,12 +8,12 @@ import Component from "./EmbeddingViewMosaic.svelte";
 import type { Point, Rectangle, ViewportState } from "../utils.js";
 import type { Theme } from "./theme.js";
 import type {
-    AutomaticLabelsConfig,
-    CustomComponent,
-    DataField,
-    DataPoint,
-    DataPointID,
-    OverlayProxy,
+  AutomaticLabelsConfig,
+  CustomComponent,
+  DataField,
+  DataPoint,
+  DataPointID,
+  OverlayProxy,
 } from "./types.js";
 
 export interface EmbeddingViewMosaicProps {
