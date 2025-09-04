@@ -12,7 +12,7 @@ export interface Cache {
   set(key: string, value: any): Promise<void>;
 }
 
-export interface DataColumns {
+export interface ViewerConfig {
   /** The column for unique identifiers */
   id: string;
   /** The columns for the embedding view */
@@ -39,7 +39,7 @@ export interface DataSource {
     coordinator: Coordinator,
     table: string,
     onStatus: (message: string) => void,
-  ): Promise<DataColumns>;
+  ): Promise<ViewerConfig>;
 
   /** Downloads a zip archive of the dataset plus static assets of the viewer */
   downloadArchive?: () => Promise<void>;

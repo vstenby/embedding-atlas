@@ -3,7 +3,7 @@
 import type { Coordinator } from "@uwdata/mosaic-core";
 import * as SQL from "@uwdata/mosaic-sql";
 
-import type { DataColumns, DataSource } from "./data_source.js";
+import type { DataSource, ViewerConfig } from "./data_source.js";
 import { initializeDatabase } from "./lib/database_utils.js";
 import { exportMosaicSelection, filenameForSelection, type ExportFormat } from "./lib/mosaic_exporter.js";
 import { downloadBuffer } from "./lib/utils.js";
@@ -22,7 +22,7 @@ function joinUrl(a: string, b: string) {
 }
 
 interface Metadata {
-  columns: DataColumns;
+  columns: ViewerConfig;
   is_static?: boolean;
   database?: {
     type: "wasm" | "socket" | "rest";
@@ -51,7 +51,7 @@ export class BackendDataSource implements DataSource {
     coordinator: Coordinator,
     table: string,
     onStatus: (message: string) => void,
-  ): Promise<DataColumns> {
+  ): Promise<ViewerConfig> {
     let metadata = await this.metadata();
 
     onStatus("Initializing DuckDB...");
