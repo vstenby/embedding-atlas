@@ -29,7 +29,7 @@ interface Metadata {
     uri?: string;
     load?: boolean;
   };
-  pointSize?: number;
+  point_size?: number;
 }
 
 export class BackendDataSource implements DataSource {
