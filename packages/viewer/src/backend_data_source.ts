@@ -93,7 +93,7 @@ export class BackendDataSource implements DataSource {
 
     return {
       ...metadata.columns,
-      pointSize: metadata.pointSize,
+      pointSize: metadata.point_size,
     };
   }
 
